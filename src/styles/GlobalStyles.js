@@ -9,6 +9,10 @@ export const GlobalStyles = createGlobalStyle`
         box-sizing: inherit;
     }
 
+ul, li, ol {
+    list-style-type: none;
+}
+
     ul, li, h1, h2, h3, p, button {
     margin: 0;
 }
