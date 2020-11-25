@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
   ${(props) =>
     props.fixed &&
     css`
-      ${appearFromTop({ time: "300ms", from: "-25%", top: "40px" })}
+      ${appearFromTop({ time: "300ms", from: "-25%", to: "40px" })}
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     `}
 `;

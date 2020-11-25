@@ -24,7 +24,7 @@ const appearFromTopKeyFrames = (from, to) => {
           }
   
           to {
-              top: ${top}
+              top: ${to}
           }
       `;
 };
@@ -38,4 +38,25 @@ export const appearFromTop = ({
   css`
     animation: ${time} ${appearFromTopKeyFrames(from, to)} ${easing},
       ${time} ${fadeInKeyFrames} ease;
+  `;
+
+const appearFromOneSideKeyFrames = (from, to) => {
+  return keyframes`
+    from {
+      left: ${from}
+    }
+    to {
+      left: ${to}
+    }
+  `;
+};
+
+export const appearFromOneSide = ({
+  time = "1s",
+  easing = "cubic-bezier(.18, .89, .32, 1.28)",
+  from,
+  to,
+}) =>
+  css`
+    animation: ${time} ${appearFromOneSideKeyFrames(from, to)} ${easing} forwards;
   `;
