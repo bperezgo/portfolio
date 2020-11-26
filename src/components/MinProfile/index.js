@@ -18,10 +18,18 @@ export const MinProfile = () => {
     },
     [showFixed]
   );
+
+  const onDragStart = (e) => {
+    console.log("e");
+    console.log(e);
+    console.log(e.dataTransfer);
+    e.preventDefault();
+    e.stopPropagation();
+  }
   return (
     <Fragment>
       {showFixed && (
-        <Wrapper fixed={showFixed}>
+        <Wrapper onDragEnter={onDragStart} onDragLeave={onDragStart} fixed={showFixed}>
           <Img src={ImgProfile} />
         </Wrapper>
       )}

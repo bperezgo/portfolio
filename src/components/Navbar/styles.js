@@ -33,7 +33,7 @@ export const Icon = styled(Menu)`
   line-height: 40px;
   text-align: center;
   position: fixed;
-  z-index: 4;
+  z-index: 11;
   right: 5px;
   top: 5px;
   color: white;
@@ -50,6 +50,7 @@ export const Nav = styled.nav`
   align-items: center;
   justify-content: center;
   transition: right 0.2s ease;
+  z-index: 10;
   right: ${(props) => (props.isActive ? "0" : "-100vw")};
 `;
 

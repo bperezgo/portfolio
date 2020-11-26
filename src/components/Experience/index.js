@@ -1,38 +1,20 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import { ImgExperience } from "../ImgExperience";
-import { Wrapper, Blind } from "./styles";
-
-const useHover = () => {
-  const [value, setValue] = useState(false);
-
-  const ref = useRef(null);
-  const handleMouseOver = () => setValue(true);
-  const handleMouseOut = () => setValue(false);
-
-  useEffect(() => {
-    const node = ref.current;
-    if (node) {
-      node.addEventListener("mouseover", handleMouseOver);
-      node.addEventListener("mouseout", handleMouseOut);
-
-      return () => {
-        node.removeEventListener("mouseover", handleMouseOver);
-        node.removeEventListener("mouseout", handleMouseOut);
-      };
-    }
-  }, [ref.current]);
-
-  return [ref, value];
-};
+import { Wrapper } from "./styles";
+import { Persian } from "../Persian";
 
 export const Experience = () => {
-  const [hoverRef, isHovered] = useHover();
+  const [tap, setTap] = useState(false);
+  const handleTap = () => {
+    setTap(!tap);
+  }
   return (
-    <Wrapper ref={hoverRef}>
+    <Wrapper
+      onClick={handleTap}
+    // ref={hoverRef}
+    >
       <ImgExperience />
-      <Blind fixed={isHovered}>
-        Persiana informativa
-      </Blind>
+      <Persian fixed={tap} title="Título Persiana" content="Persiana informativa"></Persian>
     </Wrapper>
   );
 };
