@@ -1,8 +1,10 @@
 import React, { Fragment, useState, useEffect } from "react";
+import { connect } from "react-redux";
+import { setDetailedProfile } from "../../actions";
 import { Wrapper, Img } from "./styles";
 import ImgProfile from "../../assets/min-profile.jpg";
 
-export const MinProfile = () => {
+const MinProfileComponent = (props) => {
   const [showFixed, setShowFixed] = useState(false);
 
   useEffect(
@@ -19,20 +21,42 @@ export const MinProfile = () => {
     [showFixed]
   );
 
+  const handleClick = (e) => {
+    props.setDetailedProfile(true);
+  };
+
   const onDragStart = (e) => {
-    console.log("e");
-    console.log(e);
-    console.log(e.dataTransfer);
+    // console.log("e");
+    // console.log(e);
+    // console.log(e.dataTransfer);
     e.preventDefault();
     e.stopPropagation();
-  }
+  };
   return (
     <Fragment>
-      {showFixed && (
-        <Wrapper onDragEnter={onDragStart} onDragLeave={onDragStart} fixed={showFixed}>
+      {showFixed && !props.isDetailedProfile && (
+        <Wrapper
+          onDragEnter={onDragStart}
+          onDragLeave={onDragStart}
+          fixed={showFixed}
+          onClick={handleClick}
+        >
           <Img src={ImgProfile} />
         </Wrapper>
       )}
     </Fragment>
   );
 };
+
+const matStateToProps = ({ isDetailedProfile }) => ({
+  isDetailedProfile,
+});
+
+const mapDispatchToProps = {
+  setDetailedProfile,
+};
+
+export const MinProfile = connect(
+  matStateToProps,
+  mapDispatchToProps
+)(MinProfileComponent);

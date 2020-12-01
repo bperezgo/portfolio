@@ -1,16 +1,24 @@
 import React, { Fragment } from "react";
+import { connect } from "react-redux";
+import { setDetailedProfile } from "../../actions";
 import { ProfilePhoto } from "../ProfilePhoto";
 import { Contact } from "../Contact";
 import { Container } from "./styles";
 import { ProfileSection } from "../ProfileSection";
 import { AiFillCloseCircle } from "react-icons/ai";
 
-export const DetailedProfile = ({ show = false }) => {
+const DetailedProfileComponent = ({
+  isDetailedProfile,
+  setDetailedProfile,
+}) => {
+  const handleClose = () => {
+    setDetailedProfile(false);
+  };
   return (
     <Fragment>
-      {show && (
+      {isDetailedProfile && (
         <Container>
-          <AiFillCloseCircle />
+          <AiFillCloseCircle onClick={handleClose} />
           <ProfilePhoto />
           <Contact />
           {[1, 2, 3].map((profElem) => (
@@ -21,3 +29,16 @@ export const DetailedProfile = ({ show = false }) => {
     </Fragment>
   );
 };
+
+const mapStateToProps = ({ isDetailedProfile }) => ({
+  isDetailedProfile,
+});
+
+const matDispatchToProps = {
+  setDetailedProfile,
+};
+
+export const DetailedProfile = connect(
+  mapStateToProps,
+  matDispatchToProps
+)(DetailedProfileComponent);

@@ -1,0 +1,3 @@
+export const ACTIONS = {
+  SET_DETAILED_PROFILE: "SET_DETAILED_PROFILE",
+};

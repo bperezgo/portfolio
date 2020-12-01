@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { RowContainer } from "../RowContainer/styles";
 
 export const ProfileSection = ({
@@ -7,12 +7,14 @@ export const ProfileSection = ({
   items = [1, 2, 3],
 }) => {
   return (
-    <RowContainer>
-      <div>{nameSection}</div>
-      <div>{description}</div>
-      {items.map((item) => (
-        <div>Item</div>
-      ))}
-    </RowContainer>
+    <Fragment>
+      <RowContainer>
+        <div>{nameSection}</div>
+        <div>{description}</div>
+        {items.map((item) => (
+          <div>Item</div>
+        ))}
+      </RowContainer>
+    </Fragment>
   );
 };
