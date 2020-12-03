@@ -2,20 +2,6 @@ import styled from "styled-components";
 import { Link as LinkRouter } from "@reach/router";
 import { Menu } from "../../icons/Menu";
 
-// const menuInKeyFrames = keyframes`
-// from {
-//   right: -100vw;
-// }
-// to {
-//   right: 0;
-// }
-// `;
-
-// const menuIn = ({ time = "1s", type = "ease" }) =>
-//   css`
-//     animation: ${time} ${menuInKeyFrames} ${type};
-//   `;
-
 export const Header = styled.header`
   display: flex;
   flex-direction: row;

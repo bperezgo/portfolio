@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack",
     "start": "webpack",
-    "dev": "webpack serve",
+    "dev": "webpack serve --mode 'development'",
     "serve:dev": "webpack --mode 'development' && npx serve dist -s"
   },
   "author": "@bperezgo",

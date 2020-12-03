@@ -1,3 +1,3 @@
 export const globalState = {
-  isDetailedProfile: true,
+  isDetailedProfile: false,
 };
