@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Link as LinkRouter } from "@reach/router";
 import { Menu } from "../../icons/Menu";
 
 // const menuInKeyFrames = keyframes`
@@ -54,11 +53,11 @@ export const Nav = styled.nav`
   right: ${(props) => (props.isActive ? "0" : "-100vw")};
 `;
 
-export const Link = styled(LinkRouter)`
-  justify-content: center;
-  height: 40px;
-  font-size: 2em;
-  text-decoration: underline;
-  margin-bottom: 0.5em;
-  color: white;
-`;
+// export const Link = styled(LinkRouter)`
+//   justify-content: center;
+//   height: 40px;
+//   font-size: 2em;
+//   text-decoration: underline;
+//   margin-bottom: 0.5em;
+//   color: white;
+// `;

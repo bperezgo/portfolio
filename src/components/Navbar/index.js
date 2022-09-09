@@ -15,12 +15,12 @@ export const Navbar = () => {
         </div>
         <Nav isActive={isActive}>
           <ol>
-            <li>
+            {/* <li>
               <Link to={"#"}>Experiencia</Link>
             </li>
             <li>
               <Link to={"#"}>Portafolio</Link>
-            </li>
+            </li> */}
           </ol>
         </Nav>
       </Header>
