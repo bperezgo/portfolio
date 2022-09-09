@@ -32,3 +32,6 @@ notas.txt
 
 # vscode
 .vscode/
+
+# next
+.next/
