@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { Menu } from "../../icons/Menu";
+import styled from 'styled-components';
+import { Menu } from '../../icons/Menu';
 
 // const menuInKeyFrames = keyframes`
 // from {
@@ -39,9 +39,9 @@ export const Icon = styled(Menu)`
   cursor: pointer;
 `;
 
-export const Nav = styled.nav`
+export const Nav = styled.nav<{ isActive: boolean }>`
   position: fixed;
-  background: rgba(68, 17, 120, .8);
+  background: rgba(68, 17, 120, 0.8);
   top: 0;
   bottom: 0;
   width: 100vw;
@@ -50,7 +50,7 @@ export const Nav = styled.nav`
   justify-content: center;
   transition: right 0.2s ease;
   z-index: 10;
-  right: ${(props) => (props.isActive ? "0" : "-100vw")};
+  right: ${(props) => (props.isActive ? '0' : '-100vw')};
 `;
 
 // export const Link = styled(LinkRouter)`

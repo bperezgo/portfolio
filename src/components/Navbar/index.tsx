@@ -1,5 +1,5 @@
-import React, { Fragment, useState } from "react";
-import { Header, Nav, Icon, Link } from "./styles";
+import React, { Fragment, useState } from 'react';
+import { Header, Nav, Icon } from './styles';
 
 export const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
