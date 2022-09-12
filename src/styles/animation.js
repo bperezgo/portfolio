@@ -1,4 +1,4 @@
-import { css, keyframes } from "styled-components";
+import { css, keyframes } from 'styled-components';
 
 const fadeInKeyFrames = keyframes`
 from {
@@ -12,7 +12,7 @@ to {
 }
 `;
 
-export const fadeIn = ({ time = "1s", type = "ease" } = {}) =>
+export const fadeIn = ({ time = '1s', type = 'ease' } = {}) =>
   css`
     animation: ${time} ${fadeInKeyFrames} ${type};
   `;
@@ -30,8 +30,8 @@ const appearFromTopKeyFrames = (from, to) => {
 };
 
 export const appearFromTop = ({
-  time = "1s",
-  easing = "cubic-bezier(.18, .89, .32, 1.28)",
+  time = '1s',
+  easing = 'cubic-bezier(.18, .89, .32, 1.28)',
   from,
   to,
 }) =>
@@ -52,11 +52,12 @@ const appearFromOneSideKeyFrames = (from, to) => {
 };
 
 export const appearFromOneSide = ({
-  time = "1s",
-  easing = "cubic-bezier(.18, .89, .32, 1.28)",
+  time = '1s',
+  easing = 'cubic-bezier(.18, .89, .32, 1.28)',
   from,
   to,
 }) =>
   css`
-    animation: ${time} ${appearFromOneSideKeyFrames(from, to)} ${easing} forwards;
+    animation: ${time} ${appearFromOneSideKeyFrames(from, to)} ${easing}
+      forwards;
   `;
