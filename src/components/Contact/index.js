@@ -10,10 +10,10 @@ export const Contact = ({
     <Wrapper>
       <h3>{name}</h3>
       <h4>
-        <trong>Celular:</trong> {phoneNumber}
+        <strong>Celular:</strong> {phoneNumber}
       </h4>
       <h4>
-        <trong>Correo:</trong> {email}
+        <strong>Correo:</strong> {email}
       </h4>
     </Wrapper>
   );
