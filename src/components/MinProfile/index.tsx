@@ -34,6 +34,7 @@ export const MinProfile = () => {
         >
           <Image
             src={ImgProfile}
+            alt="img-profile"
             layout="fill"
             objectFit="cover"
             style={{ height: '100%', width: 'auto', margin: '0' }}

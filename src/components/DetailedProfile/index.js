@@ -1,9 +1,9 @@
-import React, { Fragment } from "react";
-import { ProfilePhoto } from "../ProfilePhoto";
-import { Contact } from "../Contact";
-import { Container } from "./styles";
-import { ProfileSection } from "../ProfileSection";
-import { AiFillCloseCircle } from "react-icons/ai";
+import React, { Fragment } from 'react';
+import { ProfilePhoto } from '../ProfilePhoto';
+import { Contact } from '../Contact';
+import { Container } from './styles';
+import { ProfileSection } from '../ProfileSection';
+import { AiFillCloseCircle } from 'react-icons/ai';
 
 export const DetailedProfile = ({ show = false }) => {
   return (
@@ -13,8 +13,8 @@ export const DetailedProfile = ({ show = false }) => {
           <AiFillCloseCircle />
           <ProfilePhoto />
           <Contact />
-          {[1, 2, 3].map((profElem) => (
-            <ProfileSection></ProfileSection>
+          {[1, 2, 3].map((profElem, key) => (
+            <ProfileSection key={key} />
           ))}
         </Container>
       )}
