@@ -1,20 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import { Experience } from '../Experience';
+import type { Experience as ExperienceType } from '@data/experience';
 
 export const ListOfExperiences = () => {
-  const alt = 'green iguana';
-  const url = 'https://mui.com/static/images/cards/contemplative-reptile.jpg';
-  const props = {
-    contentMedia: {
-      alt,
-      url,
-    },
-    title: 'Lizard',
-    description:
-      'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica',
-    callToActionMsg: 'See',
-  };
+  const [experiences, setExperiences] = useState<ExperienceType[]>([]);
+
+  async function getExperiences() {
+    const res = await fetch('/api/experiences');
+    const data = await res.json();
+    setExperiences(data);
+  }
+  // TODO: use getServerSideProps or getStaticProps
+  useEffect(() => {
+    getExperiences();
+  }, []);
   return (
     <Box
       sx={{
@@ -24,8 +24,8 @@ export const ListOfExperiences = () => {
         padding: '0.5rem',
       }}
     >
-      {[1, 2, 3].map((exp) => (
-        <Experience key={exp} {...props} />
+      {experiences.map((exp, key) => (
+        <Experience key={key} {...exp} />
       ))}
     </Box>
   );
