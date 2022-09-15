@@ -1,5 +1,5 @@
 name: Portfolio CI/CD
-description: 'Starting CI/CD for Portfolio'
+
 on:
   push:
     branches: [master]
