@@ -17,9 +17,14 @@ class ErrorBoundary extends React.Component<PropsWithChildren, BoundoryState> {
     return { hasError: true };
   }
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+    const { name, stack, message } = error;
+    const { componentStack } = errorInfo;
     fetch('/api/error', {
-      body: JSON.stringify({ error, errorInfo }),
+      body: JSON.stringify({ name, stack, message, componentStack }),
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
     });
   }
   render() {

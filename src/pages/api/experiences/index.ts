@@ -1,21 +1,10 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { Experience } from '@data/experience';
 
-const findAll = (): Promise<Experience[]> => {
-  return new Promise((resolve) => {
-    const alt = 'green iguana';
-    const url = 'https://mui.com/static/images/cards/contemplative-reptile.jpg';
-    const experience = {
-      contentMedia: {
-        alt,
-        url,
-      },
-      title: 'Lizard',
-      description:
-        'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica',
-    };
-    resolve([experience, experience, experience]);
-  });
+const findAll = async (): Promise<Experience[]> => {
+  const res = await fetch(`${process.env.PORTFOLIO_BACKEND_HOST}/experiences`);
+  const { data: experiences }: { data: Experience[] } = await res.json();
+  return experiences;
 };
 
 export default async function handler(
